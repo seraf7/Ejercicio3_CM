@@ -8,9 +8,9 @@
     tools:context=".Detalles" >
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cvNombre"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
+        android:id="@+id/cvDetalles"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         app:cardBackgroundColor="@color/cardColor"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,30 +18,163 @@
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.669"
+        app:layout_constraintVertical_bias="0.85"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialCarView.CutD">
 
-        <TextView
-            android:id="@+id/tvName"
+        <!--Layout general del CardView-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/pokemon"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </com.google.android.material.card.MaterialCardView>
+            android:orientation="vertical">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        app:cardBackgroundColor="@color/cardColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.924"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.901"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialCarView.CutI" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:gravity="center"
+                        android:text="@string/pokemon"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMas"
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="expandir"
+                        app:icon="@drawable/mas" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margenLineas"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="@string/lblXP" />
+
+                    <TextView
+                        android:id="@+id/tvExp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="@string/num" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Layout del elemento expandible-->
+            <LinearLayout
+                android:id="@+id/expandible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margenLineas"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="@string/lblHeight" />
+
+                    <TextView
+                        android:id="@+id/tvHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="@string/num" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margenLineas"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="@string/lblWeight" />
+
+                    <TextView
+                        android:id="@+id/tvWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="@string/num" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margenLineas"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="@string/lblTypes" />
+
+                    <ImageView
+                        android:id="@+id/ivTipo1"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1.5"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/dragon" />
+
+                    <ImageView
+                        android:id="@+id/ivTipo2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1.5"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/bug" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -53,4 +186,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.271"
         tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
