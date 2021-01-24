@@ -15,4 +15,31 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!--CardView Personalizada, esquinas derechas redondeadas-->
+    <style name="ShapeAppearanceOverlay.MaterialCarView.CutD" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">15dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">15dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <!--CardView Personalizada, esquinas izquierdas redondeadas-->
+    <style name="ShapeAppearanceOverlay.MaterialCarView.CutI" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">15dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">15dp</item>
+    </style>
+
+    <!--CardView Personalizada, esquinas alternadas redondeadas-->
+    <style name="ShapeAppearanceOverlay.MaterialCarView.CutMenu" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">15dp</item>
+        <item name="cornerSizeBottomRight">15dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
 </resources>

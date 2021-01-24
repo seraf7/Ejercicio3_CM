@@ -1,6 +1,8 @@
 package com.example.ejercicio3.models;
 
-public class Pokemon {
+import java.io.Serializable;
+
+public class Pokemon implements Serializable {
     private long id;
     private String nombre;
     private String url;
@@ -10,6 +12,7 @@ public class Pokemon {
     private int peso;
     private String[] tipo;
 
+    //Constructor generico
     public Pokemon(long id, String nombre, String url) {
         this.id = id;
         this.nombre = nombre;

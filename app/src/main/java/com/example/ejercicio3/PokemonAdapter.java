@@ -12,9 +12,16 @@ import java.util.ArrayList;
 public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>{
 
     private ArrayList<Pokemon> datos;
+    private ItemClickListener clickListener;
 
-    public PokemonAdapter(ArrayList<Pokemon> datos){
+    //Interfaz para reconocer eventos Clic
+    interface ItemClickListener{
+        void OnItemCLick(int position);
+    }
+
+    public PokemonAdapter(ArrayList<Pokemon> datos, ItemClickListener onClickListener){
         this.datos = datos;
+        this.clickListener = onClickListener;
     }
 
     //Crea una vista PokemonViewHolder y la asocia a los elementos de item_pokemon
@@ -41,7 +48,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
     }
 
     //Clase para representar cada vista de la coleccion
-    class PokemonViewHolder extends RecyclerView.ViewHolder{
+    class PokemonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         //Atributos que contiene cada elemento
         ImageView ivCard;
         TextView tvNumero;
@@ -54,6 +61,16 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
             ivCard = itemView.findViewById(R.id.ivCard);
             tvNumero = itemView.findViewById(R.id.tvNumero);
             tvNombre = itemView.findViewById(R.id.tvNombre);
+            //Asociacion del listener
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            //Recupera la posicion del elemento seleccionado
+            int position = getAdapterPosition();
+            //Invoca el metodo OnItemClick con la posicion del elemento
+            clickListener.OnItemCLick(position);
         }
     }
 }

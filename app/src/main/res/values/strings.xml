@@ -2,4 +2,14 @@
     <string name="app_name">Ejercicio3</string>
     <string name="num">#0</string>
     <string name="pokemon">Pokemón</string>
+    <string name="peticionInicial">https://pokeapi.co/api/v2/pokemon?limit=151</string>
+    <string name="rqResultados">results</string>
+    <string name="rqNombre">name</string>
+    <string name="rqUrl">url</string>
+    <string name="btnAceptar">Accept</string>
+    <string name="btnCancelar">Cancel</string>
+    <string name="btnTry">Try Again</string>
+    <string name="error">Error</string>
+    <string name="errorProcesamiento">An error occurred while processing the data</string>
+    <string name="errorConexion">Connection failed. Do you want to try connecting again?</string>
 </resources>
