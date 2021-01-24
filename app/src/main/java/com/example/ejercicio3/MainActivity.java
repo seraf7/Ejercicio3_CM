@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -38,10 +39,15 @@ public class MainActivity extends AppCompatActivity implements PokemonAdapter.It
     RequestQueue queue;
     JsonObjectRequest request;
 
+    MediaPlayer elegir;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Inicialización de objeto de audio
+        elegir = MediaPlayer.create()
 
         //Asociación de elementos de la vista
         pbConexion = findViewById(R.id.pbConexion);
@@ -75,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements PokemonAdapter.It
                 .setNegativeButton(getResources().getString(R.string.btnCancelar), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                        finish();
                     }
                 })
                 .create().show();
@@ -116,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements PokemonAdapter.It
                     .setPositiveButton(getResources().getString(R.string.btnAceptar), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
+                            finish();
                         }
                     }).create().show();
         }

@@ -43,6 +43,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="5"
+                        android:fontFamily="@font/Pokemon_Solid"
                         android:gravity="center"
                         android:text="@string/pokemon"
                         android:textSize="20sp"
@@ -67,19 +68,27 @@
                     android:weightSum="6">
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/textView7"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:text="@string/lblXP" />
+                        android:fontFamily="@font/Pokemon_Solid"
+                        android:text="@string/lblTypes" />
 
-                    <TextView
-                        android:id="@+id/tvExp"
+                    <ImageView
+                        android:id="@+id/ivTipo1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:text="@string/num" />
+                        android:layout_height="30dp"
+                        android:layout_weight="1.5"
+                        android:scaleType="fitCenter" />
+
+                    <ImageView
+                        android:id="@+id/ivTipo2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1.5"
+                        android:scaleType="fitCenter" />
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -90,7 +99,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margenLineas"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/Pokemon_Solid"
+                        android:text="@string/lblXP" />
+
+                    <TextView
+                        android:id="@+id/tvExp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/Pokemon_Solid"
+                        android:gravity="center"
+                        android:text="@string/num"
+                        android:textStyle="italic" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -104,6 +139,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
+                        android:fontFamily="@font/Pokemon_Solid"
                         android:text="@string/lblHeight" />
 
                     <TextView
@@ -111,8 +147,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
+                        android:fontFamily="@font/Pokemon_Solid"
                         android:gravity="center"
-                        android:text="@string/num" />
+                        android:text="@string/num"
+                        android:textStyle="italic" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -127,6 +165,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
+                        android:fontFamily="@font/Pokemon_Solid"
                         android:text="@string/lblWeight" />
 
                     <TextView
@@ -134,40 +173,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
+                        android:fontFamily="@font/Pokemon_Solid"
                         android:gravity="center"
-                        android:text="@string/num" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margenLineas"
-                    android:orientation="horizontal"
-                    android:weightSum="6">
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="@string/lblTypes" />
-
-                    <ImageView
-                        android:id="@+id/ivTipo1"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1.5"
-                        android:scaleType="fitCenter"
-                        app:srcCompat="@drawable/dragon" />
-
-                    <ImageView
-                        android:id="@+id/ivTipo2"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1.5"
-                        android:scaleType="fitCenter"
-                        app:srcCompat="@drawable/bug" />
-
+                        android:text="@string/num"
+                        android:textStyle="italic" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -177,14 +186,38 @@
     </com.google.android.material.card.MaterialCardView>
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivPokemon"
         android:layout_width="200dp"
         android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.271" />
+
+    <ProgressBar
+        android:id="@+id/pbConexion"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:indeterminateDrawable="@drawable/progress_ball"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94"
+        app:srcCompat="@drawable/ic_pokebola" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

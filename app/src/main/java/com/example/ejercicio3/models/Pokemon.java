@@ -1,6 +1,7 @@
 package com.example.ejercicio3.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Pokemon implements Serializable {
     private long id;
@@ -10,13 +11,14 @@ public class Pokemon implements Serializable {
     private int expBase;
     private int altura;
     private int peso;
-    private String[] tipo;
+    private ArrayList<String> tipo;
 
     //Constructor generico
     public Pokemon(long id, String nombre, String url) {
         this.id = id;
         this.nombre = nombre;
         this.url = url;
+        this.tipo = new ArrayList<>();
     }
 
     public long getId() {
@@ -75,11 +77,26 @@ public class Pokemon implements Serializable {
         this.peso = peso;
     }
 
-    public String[] getTipo() {
-        return tipo;
+    public String getTipo(int i) {
+        if(i < tipo.size()){
+            return tipo.get(i);
+        }
+        return "";
     }
 
-    public void setTipo(String[] tipo) {
-        this.tipo = tipo;
+    public int getTipos(){
+        return this.tipo.size();
+    }
+
+    public String getTipo(){
+        String r = "";
+        for(int i=0; i< tipo.size(); i++){
+            r += " " + this.getTipo(i);
+        }
+        return r;
+    }
+
+    public void addTipo(String tipo) {
+        this.tipo.add(tipo);
     }
 }
