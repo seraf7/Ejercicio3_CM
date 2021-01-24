@@ -5,6 +5,8 @@ import androidx.cardview.widget.CardView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
@@ -45,6 +47,7 @@ public class Detalles extends AppCompatActivity implements Response.ErrorListene
     MaterialButton btnMas;
     ProgressBar pbConexion;
 
+    MediaPlayer regresar;
     RequestQueue queue;
     JsonObjectRequest request;
 
@@ -52,6 +55,9 @@ public class Detalles extends AppCompatActivity implements Response.ErrorListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles);
+
+        //Inicialización de objeto de sonido
+        regresar = MediaPlayer.create(this, R.raw.pokeball_caught);
 
         //Asociacion de elementos de la vista
         tvName = findViewById(R.id.tvName);
@@ -237,5 +243,8 @@ public class Detalles extends AppCompatActivity implements Response.ErrorListene
     }
 
     public void home(View view) {
+        regresar.start();
+        //Regresa al catalogo de pokemon
+        super.onBackPressed();
     }
 }

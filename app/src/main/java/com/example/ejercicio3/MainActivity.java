@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements PokemonAdapter.It
         setContentView(R.layout.activity_main);
 
         //Inicialización de objeto de audio
-        elegir = MediaPlayer.create()
+        elegir = MediaPlayer.create(this, R.raw.pokeball_opening);
 
         //Asociación de elementos de la vista
         pbConexion = findViewById(R.id.pbConexion);
@@ -131,7 +131,6 @@ public class MainActivity extends AppCompatActivity implements PokemonAdapter.It
     //Metodo para reconocer clic en cada elemento del RecyclerView
     @Override
     public void OnItemCLick(int position) {
-        //Toast.makeText(this, pokemons.get(position).getNombre(), Toast.LENGTH_SHORT).show();
         //Intent para indicar el siguiente Activity
         Intent intent = new Intent(this, Detalles.class);
         //Bundle para almacenar el Pokemón seleccionado
@@ -139,6 +138,10 @@ public class MainActivity extends AppCompatActivity implements PokemonAdapter.It
         bundle.putSerializable("Pokemon", pokemons.get(position));
         //Guardar información en el Intent
         intent.putExtras(bundle);
+
+        //Reproducción de sonido
+        elegir.start();
+
         //Inicia el Activity de Detalles
         startActivity(intent);
     }

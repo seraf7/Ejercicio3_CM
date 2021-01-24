@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margenLineas">10dp</dimen>
+    <dimen name="textCard">12sp</dimen>
+    <item name="espacio" type="dimen" format="float">0.1</item>
 </resources>

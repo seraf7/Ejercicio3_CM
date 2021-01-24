@@ -43,10 +43,11 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="5"
-                        android:fontFamily="@font/Pokemon_Solid"
+                        android:fontFamily="@font/pokemon_solid"
                         android:gravity="center"
+                        android:letterSpacing="@dimen/espacio"
                         android:text="@string/pokemon"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <com.google.android.material.button.MaterialButton
@@ -72,7 +73,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:fontFamily="@font/Pokemon_Solid"
+                        android:letterSpacing="@dimen/espacio"
                         android:text="@string/lblTypes" />
 
                     <ImageView
@@ -99,7 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -113,7 +114,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:fontFamily="@font/Pokemon_Solid"
                         android:text="@string/lblXP" />
 
                     <TextView
@@ -121,8 +121,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:fontFamily="@font/Pokemon_Solid"
+                        android:fontFamily="@font/pokemon_solid"
                         android:gravity="center"
+                        android:letterSpacing="@dimen/espacio"
                         android:text="@string/num"
                         android:textStyle="italic" />
                 </LinearLayout>
@@ -139,7 +140,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:fontFamily="@font/Pokemon_Solid"
+                        android:letterSpacing="@dimen/espacio"
                         android:text="@string/lblHeight" />
 
                     <TextView
@@ -147,8 +148,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:fontFamily="@font/Pokemon_Solid"
+                        android:fontFamily="@font/pokemon_solid"
                         android:gravity="center"
+                        android:letterSpacing="@dimen/espacio"
                         android:text="@string/num"
                         android:textStyle="italic" />
                 </LinearLayout>
@@ -165,7 +167,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:fontFamily="@font/Pokemon_Solid"
+                        android:letterSpacing="@dimen/espacio"
                         android:text="@string/lblWeight" />
 
                     <TextView
@@ -173,8 +175,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:fontFamily="@font/Pokemon_Solid"
+                        android:fontFamily="@font/pokemon_solid"
                         android:gravity="center"
+                        android:letterSpacing="@dimen/espacio"
                         android:text="@string/num"
                         android:textStyle="italic" />
                 </LinearLayout>
